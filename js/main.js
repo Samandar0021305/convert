@@ -53,3 +53,8 @@ speechBtn.addEventListener('click',e=>{
     }  
 })
 
+
+
+function get(){
+    console.log(Array)
+}
