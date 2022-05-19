@@ -1,9 +1,9 @@
-const textarea = document.querySelector("textarea"),
-speechBtn = document.querySelector('button'),
-voisceList = document.querySelector("select");
+const textarea = document.querySelector("textarea")
+const speechBtn = document.querySelector('button')
+const voisceList = document.querySelector("select");
 
-let synth = speechSynthesis,
-isSpeaking = true
+let synth = speechSynthesis;
+let isSpeaking = true
 
 function vocies(){
 for(let voice of synth.getVoices()){
@@ -40,6 +40,15 @@ speechBtn.addEventListener('click',e=>{
               isSpeaking = true
               speechBtn.innerHTML = "Reaume Speech"
           }
+          setInterval(()=>{
+              if(!isSpeaking.speaking && !isSpeaking){
+                  isSpeaking = true;
+                  speechBtn.innerHTML = "Converter to spech"
+              }
+          })
+      }
+      else{
+        speechBtn.innerHTML = "Converter to spech"
       }
     }  
 })
